@@ -1,11 +1,12 @@
-name: shreya
-on:
-  push:
-    branches: [ main ]
-jobs:
-  demo:
-    runs-on: ubuntu-latest
+name: Schedule Job
 
+on:
+  schedule:
+    - cron: "0 0 * * *"
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
     steps:
-      - name: Greetings
-        run: echo "Hello from India"
+      - name: Print Message
+        run: echo "Schedule work flow execute"
